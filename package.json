@@ -6,10 +6,13 @@
   "engines": {
     "node": "^22.12.0 || >=24.0.0"
   },
-  "description": "BTM Terminal public build: read-only interface populated with synthetic demonstration data only.",
+  "description": "BTM public Terminal interface and reusable deterministic Risk Engine V1 framework.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit && vite build && npm run build:risk",
+    "build:risk": "tsc -p backend/tsconfig.json",
+    "test:risk": "vitest run backend/risk-engine-v1.test.ts",
+    "example:risk": "npm run build:risk && node backend/example.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"

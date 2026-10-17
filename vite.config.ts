@@ -13,5 +13,5 @@ export default defineConfig({
   build: { outDir: 'dist', emptyOutDir: true },
   server: { port: 5173, host: true },
   preview: { port: 4173, host: true },
-  test: { environment: 'node', include: ['src/**/*.test.ts'] },
+  test: { environment: 'node', include: ['src/**/*.test.ts', 'backend/**/*.test.ts'] },
 });
